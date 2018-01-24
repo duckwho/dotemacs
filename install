@@ -1,0 +1,27 @@
+#!/bin/sh
+unamestr=`uname`
+CURRENT_DIR=$(pwd)
+ETC_DIR=$HOME/etc
+EMACS_DIR=$HOME/.emacs.d
+
+if [[ "$unamestr" == 'Linux' ]]; then
+
+  if [ ! -d "$ETC_DIR" ]; then 
+    mkdir $ETC_DIR
+  fi
+      if [ ! -d "$ETC_DIR/emacs" ]; then 
+        echo "created emacs"
+        ln -s $CURRENT_DIR $ETC_DIR/emacs
+      else 
+        echo "directory already exists"
+      fi
+
+elif [[ "$unamestr" == 'Darwin' ]]; then
+  if [ ! -d "$EMACS_DIR" ]; then 
+    echo "created emacs"
+    ln -s $CURRENT_DIR $EMACS_DIR
+  else
+    echo "directory already exists"
+  fi
+fi
+

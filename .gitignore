@@ -1,0 +1,13 @@
+gcal.el
+paradox.el
+.zshrc
+.keys
+elpa/
+auto-save-list/
+snippets/
+org-clock-save.el
+places
+custom.el
+README.el
+smex-items
+.zsh/
